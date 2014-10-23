@@ -29,8 +29,8 @@ public class WebScraperController {
 		String temp;
 		String boxes = "";
 		while(words.hasMoreElements()){
-			temp = words.nextElement() ;
-			boxes += temp;
+			temp = words.e r  /nextElement() ;
+			boxes += temp;/////////////....;;;;;
 			boxes += "-";
 			boxes += request.getParameter(temp);
 			boxes += " ";

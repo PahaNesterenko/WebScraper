@@ -58,5 +58,13 @@ public class SearchSettings {
 	public void setTimerFlag(boolean timerFlag) {
 		this.timerFlag = timerFlag;
 	}
+	
+	@Override
+	public String toString(){
+		String s = "site: " + urlList.toString() + "\n";
+		s = s + "words: " + wordList.toString() + "\n";
+		s = s + "time elapsed : " + timerFlag + ", count words: " + wordFlag + ", count chars: " + charFlag + ", sentences: " + sentenceFlag + "\n";
+		return s;
+	}
 
 }
