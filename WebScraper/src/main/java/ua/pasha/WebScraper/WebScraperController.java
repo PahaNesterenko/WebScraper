@@ -1,6 +1,9 @@
 package ua.pasha.WebScraper;
 
-import java.util.Enumeration;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,24 +24,25 @@ public class WebScraperController {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("View");
-		mv.addObject("parameter1", "this is first parameter");
-		mv.addObject("parameter2", "this is second parameter");
-		Enumeration<String> words = request.getParameterNames();
-
-		request.get
-		String temp;
-		String boxes = "";
-		while(words.hasMoreElements()){
-			temp = words.e r  /nextElement() ;
-			boxes += temp;/////////////....;;;;;
-			boxes += "-";
-			boxes += request.getParameter(temp);
-			boxes += " ";
+		Map<String, String[]> parameters = request.getParameterMap();
+		if( parameters.containsKey("site")){
+		Scraper scraper = new Scraper();
+		SettingsParser parser = new SettingsParser();
+		List<Results> resList = null;
+		try {
+			resList = scraper.scrape( parser.parse(parameters) );
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
-		mv.addObject("checkboxes", boxes);
-		
-		
+		List<List<String>> list = new ArrayList<List<String>>();
+		List<String> temp = null;
+		for( Results r : resList){
+			temp = r.getResults();
+			list.add(temp);
+		}
+		mv.addObject("results", list);
+		}
 				
 		return mv;
 		

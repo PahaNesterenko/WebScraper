@@ -37,12 +37,23 @@ words to search
 
 Results:<br>
 
-parameter1 : ${parameter1} <br>
-parameter2 : ${parameter2} <br>
-time: ${checkboxes} <br>
-chars: ${countWords} <br>
-words: ${countWords} <br>
-sentences: ${sentences} <br>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<% 
+ArrayList<ArrayList<String>> totalResults = new ArrayList<ArrayList<String>>();//(List<List<String>>) request.getAttribute("results");
+
+for( int i = 0 ; i < totalResults.size() ; ++i){ 
+List<String> result = totalResults.get(i);
+%>
+
+<p><%= result.get(0) %></p>
+<% for( String s : result){ %>
+<%= s %>
+<%} %>
+
+<%
+}
+ %>
 
 
 

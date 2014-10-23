@@ -61,28 +61,61 @@ public class Results {
 
 	public void printResults(SearchSettings properties) {
 
-		System.out.println(name);
+		List<String> output = getResults(properties);
 
-		if (properties.isWordFlag()) {
-			System.out.println("\tKeywords occur " + words + " times");
-			if (properties.isCharFlag()) {
-				System.out.println("\tThere are " + chars + " characters on the page");
-			}
-			if (properties.isTimerFlag()) {
-				System.out.println("\tTime spended to scpaping is " + time + " ms");
-			}
-			if (properties.isSentenceFlag()) {
-				System.out.println("\tSentences contains keywords:");
-				for (String s : sentenceList) {
-					System.out.println("\t\t" + s);
-				}
-			}
-			System.out.println("");
+		for (String s : output) {
+			System.out.println(s);
 		}
 	}
 	
-	public List<String> getResults(){
+	public void printResults() {
 		
+		List<String> output = getResults();
+		
+		for (String s : output) {
+			System.out.println(s);
+		}
 	}
 
+	public List<String> getResults(SearchSettings properties) {
+		List<String> output = new ArrayList<String>();
+
+		output.add(name);
+
+		if (properties.isWordFlag()) {
+			output.add("\tKeywords occur " + words + " times");
+			if (properties.isCharFlag()) {
+				output.add("\tThere are " + chars + " characters on the page");
+			}
+			if (properties.isTimerFlag()) {
+				output.add("\tTime spended to scpaping is " + time + " ms");
+			}
+			if (properties.isSentenceFlag()) {
+				output.add("\tSentences contains keywords:");
+				for (String s : sentenceList) {
+					output.add("\t\t" + s);
+				}
+			}
+			output.add("");
+		}
+		return output;
+	}
+
+	public List<String> getResults() {
+		List<String> output = new ArrayList<String>();
+
+		output.add(name);
+
+		output.add("\tKeywords occur " + words + " times");
+		output.add("\tThere are " + chars + " characters on the page");
+		output.add("\tTime spended to scpaping is " + time + " ms");
+		output.add("\tSentences contains keywords:");
+		for (String s : sentenceList) {
+			output.add("\t\t" + s);
+		}
+		output.add("");
+
+		return output;
+
+	}
 }
