@@ -10,8 +10,8 @@
 
 <form action = "search" method = "POST">
 
-<table style="width: 384px">
-<tr style="width: 720px; ">
+<table>
+<tr>
 <td>
 Sites to search
    <p><input type="url" placeholder="site" name="site" required autofocus></p>
@@ -21,9 +21,15 @@ words to search
    <p><input type="text" placeholder="word" name="word" required autofocus></p>
 </td>
 <td>
-<input type="submit" value="Submit">
-</td>
+<input type="checkbox" checked name="time" value="true">time spend on data scraping and data processing<Br>
+<input type="checkbox" checked name="countWords" value="true">count number of provided word(s) occurrence on webpage(s)<Br>
+<input type="checkbox" checked name="countChars" value="true">count number of characters of each web page<Br>
+<input type="checkbox" checked name="sentences" value="true">extract sentences which contain given words<Br>
+<input type="submit" value="Submit"><br>
 </tr>
+</td>
+
+
 
 </table>
 
@@ -33,6 +39,10 @@ Results:<br>
 
 parameter1 : ${parameter1} <br>
 parameter2 : ${parameter2} <br>
+time: ${checkboxes} <br>
+chars: ${countWords} <br>
+words: ${countWords} <br>
+sentences: ${sentences} <br>
 
 
 
