@@ -9,6 +9,8 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
+import ua.pasha.WebScraper.scraper.SearchSettings;
+import ua.pasha.WebScraper.scraper.SettingsParser;
 import junit.framework.TestCase;
 
 public class SettingsParserTest extends TestCase {

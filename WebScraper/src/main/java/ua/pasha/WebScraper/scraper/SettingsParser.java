@@ -1,4 +1,4 @@
-package ua.pasha.WebScraper;
+package ua.pasha.WebScraper.scraper;
 
 import java.io.BufferedReader;
 import java.io.File;

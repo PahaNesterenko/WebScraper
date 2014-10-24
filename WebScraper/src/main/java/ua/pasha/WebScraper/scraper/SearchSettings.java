@@ -1,4 +1,4 @@
-package ua.pasha.WebScraper;
+package ua.pasha.WebScraper.scraper;
 
 import java.net.*;
 import java.util.ArrayList;
