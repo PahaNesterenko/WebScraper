@@ -40,7 +40,7 @@ Results:<br>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <% 
-ArrayList<ArrayList<String>> totalResults = new ArrayList<ArrayList<String>>();//(List<List<String>>) request.getAttribute("results");
+List<List<String>> totalResults = (List<List<String>>) request.getAttribute("results");
 
 for( int i = 0 ; i < totalResults.size() ; ++i){ 
 List<String> result = totalResults.get(i);
@@ -48,7 +48,7 @@ List<String> result = totalResults.get(i);
 
 <p><%= result.get(0) %></p>
 <% for( String s : result){ %>
-<%= s %>
+<%= s %><br>
 <%} %>
 
 <%
