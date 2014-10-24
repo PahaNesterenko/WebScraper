@@ -12,4 +12,7 @@ WebScraper
 * count number of characters of each web page<br/>
 * extract sentencesв, which contain given words<br/>
 
+![Alt text](https://github.com/PahaNesterenko/WebScraper/blob/master/WebScraper/src/main/resources/shot.jpg "Print screen")
+
+
 Pasha Nesterenko
